@@ -26,19 +26,17 @@ namespace WebApi.Helpers
             {
                 var response = context.Response;
                 response.ContentType = "application/json";
+                // context.Response.Headers.Add("X-Error-Code", error.GetType().Name);
 
                 switch(error)
                 {
                     case AppException e:
-                        // custom application error
                         response.StatusCode = (int)HttpStatusCode.BadRequest;
                         break;
                     case KeyNotFoundException e:
-                        // not found error
                         response.StatusCode = (int)HttpStatusCode.NotFound;
                         break;
                     default:
-                        // unhandled error
                         response.StatusCode = (int)HttpStatusCode.InternalServerError;
                         break;
                 }

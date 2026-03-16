@@ -43,3 +43,7 @@ obj
 
 # local sqlite db that is auto generated
 LocalDatabase.db
+/appsettings.Development.json
+/.specstory/
+/.vscode
+**Zone.Identifier

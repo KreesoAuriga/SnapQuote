@@ -15,10 +15,10 @@ namespace WebApi.Helpers
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            // connect to sql server database
-            options.UseSqlServer(Configuration.GetConnectionString("WebApiDatabase"));
+            options.UseSqlServer(Configuration.GetConnectionString("SnapQuoteDatabase"));
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<RequestLog> RequestLogs { get; set; }
     }
 }
